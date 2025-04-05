@@ -1,0 +1,113 @@
+/* Dropar tabela */
+drop table maisonomedatabela;
+
+/* Deletar coluna */
+alter table pessoas
+drop column profissao;
+
+create database cadastro
+default character set utf8
+default collate utf8_general_ci;
+
+use cadastro;
+
+create table pessoas(
+id int not null auto_increment,
+nome varchar(50) not null,
+nascimento date,
+sexo enum('F', 'M', 'O'),
+peso decimal(5,2),
+altura decimal(3,2),
+nacionalidade varchar(30) default 'Brasil',
+primary key (id))default charset = utf8;
+
+
+/* Estrutura da tabela */
+describe pessoas;
+
+/* Inserir informaçoes e várias pessoas ao mesmo tempo utilizar 'values' no lugar de 'value' */
+insert into pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) values
+('Vitor de Assis', '1998-11-02', 'M', '62.00', '1.71', 'Brasil'),
+('Guilherme Rosa', '2007-06-06', 'M', '75.00', '1.79', 'Mongol'),
+('Wellington R. Cruz', '1996-03-22', 'M', '78.9', '1.80', 'Brasil'),
+('Thiagão da Apple', '1985-03-01', 'M', '112.00', '1.95', 'Brasil'),
+('Caião Brabo', '1992-03-30', 'M', '125.00', '1.90', 'Brasil');
+
+select * from pessoas;
+
+
+/* Inserir dados na tabela */
+insert into pessoas (id, nome, nascimento, sexo, peso, altura, nacionalidade)
+value
+(default, 'Amanda Souza', '200-09-9', 'F', '65.3', '1.65', default);
+
+/* ALTER TABLE (Alterar campos/colunas) */
+desc ;
+
+/* adicionar coluna na tabela */
+alter table pessoas
+add column profissao varchar(10);
+
+/* Deletar coluna */
+alter table pessoas
+drop column profissao;
+
+/* adicionar a coluna desejada após a coluna nome*/
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+alter table pessoas
+add column codigo int first;
+
+/* alterar coluna */
+alter table pessoas
+modify column profissao varchar(20) not null;
+
+/* Para fugir do conflito do not null*/ 
+alter table pessoas
+modify column profissao varchar(30) not null default'';
+
+/* Renomear a coluna, obrigatório informar o nome atual seguido do nome novo e o tipo */
+alter table pessoas change column profissao prof varchar(30);
+
+/* Alter Column */
+alter table pessoas
+modify column prof varchar(30) not null default'';
+
+alter table pessoas
+drop column codigo;
+
+desc pessoas;
+
+/* Alterar o nome da tabela */
+alter table pessoas
+rename to alunos;
+
+create table if not exists cursos(
+nome varchar(30) not null unique,
+descricao text,
+carga int unsigned, /* não permite numero negativo */
+totaulas int,
+ano year default 2025
+)default charset = utf8;
+
+create table if not exists alunos (
+testando varchar(10)
+);
+
+/**/
+alter table cursos
+add column idcursos int first;
+
+desc cursos;
+
+alter table cursos
+add primary key (idcursos);
+
+
+
+
+/* =================      SELECT * FROM PESSOAS ========================= */
+select nome , prof from alunos;
+
+/* =================      SELECT * FROM PESSOAS ========================= */
