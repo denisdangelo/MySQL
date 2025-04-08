@@ -59,3 +59,38 @@ ADD COLUMN codigo INT FIRST;
 
 /* alterar coluna */
 ALTER TABLE pessoas
+
+
+/* UPDATE sem id altera tudo que encontra com os parametros colocados. */
+UPDATE cursos
+SET ano = '2030', carga = '1000'
+Where ano = '2025';
+
+/* Limitando as linhas para serem atualizadas com limit */
+UPDATE cursos
+SET ano = '2025', carga = '60'
+Where ano = '2030'
+limit 1;
+
+/* Deletar por ID */
+DELETE FROM cursos
+WHERE idcursos = '8';
+
+/* Deletar por coluna */
+DELETE FROM cursos
+WHERE ano = '2023';
+
+/* Deletar por coluna com limite */
+DELETE FROM cursos
+WHERE ano = '2030'
+LIMIT 2;
+
+/* Deletar todos os registros (Dados e registros da tabela) */
+/* Mantem as tabelas e colunas (Estrutura) */
+
+TRUNCATE TABLE cursos;
+TRUNCATE cursos;
+
+
+/* BackUp */
+/* Server >> Seleciona a o banco e as tabelas>> DUMP  */
