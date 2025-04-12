@@ -1,3 +1,7 @@
+/* Caminho para abrir no termina */
+/* cd C:\xampp\mysql\bin */
+/* mysql -u root -p cadastro */
+
 /* Dropar tabela */
 DROP TABLE maisonomedatabela;
 
