@@ -1,3 +1,15 @@
+/*Uma lista como o nome de todas as mulheres.
+Uma lista com os dados de todos aqueles que nasceram entre 01/01/2000 e 31/12/2013
+Uma lista com o nome de todos os homens que trabalham como Contador.
+Uma lista com todos os dados de todas as mulheres que nasceram no Brasil e que tem seu nome iniciando com a letra V
+Uma lista com nome e nacionalidade de todos os homens que têm Silva no nome, não nasceram no Brasil e pesam menos de 80kg.
+Qual é a maior altura entre os estudantes homens que moram no Brasil.
+Qual é a média de peso dos estudantes cadastrados.
+Qual é a média de peso das mulheres cadastradas.
+Qual é o menor peso entre as mulheres que nasceram fora do Brasil e entre 01/01/1970 e 31/12/2000.
+Quantas mulheres tem mais de 1.60 de altura.
+*/
+
 /* Atividade 14/04 */
 
 DESC alunos;
