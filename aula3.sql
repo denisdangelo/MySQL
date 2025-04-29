@@ -1,3 +1,5 @@
+/* Aula sobre Select e filtros*/
+
 /* cadastrar clientes na tabela alunos */
 
 INSERT INTO alunos VALUE
@@ -84,3 +86,15 @@ SELECT AVG(carga) FROM cursos;
 
 /* Calculo da media do valor de (carga) da tabela cursos com ano 2025 */
 SELECT AVG(carga) FROM cursos WHERE ano = '2025';
+
+/* Agrupar com base em um parametro */
+SELECT carga, COUNT(nome) FROM cursos GROUP BY carga;
+
+SELECT nacionalidade, COUNT(nome) FROM alunos GROUP BY nacionalidade;
+
+SELECT distinct totAulas, COUNT(nome) FROM cursos GROUP BY totAulas ORDER BY totAulas;
+
+SELECT carga FROM cursos WHERE totaulas = '6' GROUP BY carga;
+
+/* importar o dump de um banco  */
+/* Server >> Data Export  Seleciona o banco export to self-contained File */
